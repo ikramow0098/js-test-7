@@ -124,3 +124,19 @@ function createBudgetTracker() {
 let budget = createBudgetTracker();
 budget(300); // Expected Output: "Current Balance: -$300"
 budget(200); // Expected Output: "Current Balance: -$500"
+
+//Task 8: Recursion - Business Growth Projection
+
+/*
+Use recursion to project revenue growth by 5% per year for up to 10 years.
+*/
+
+function calculateGrowth(years, revenue) {
+  if (years === 0) return revenue;
+  return calculateGrowth(years - 1, revenue * 1.05);
+}
+
+// Test Cases
+console.log(`Projected Revenue: $${calculateGrowth(8, 1000).toFixed(2)}`);
+console.log(`Projected Revenue: $${calculateGrowth(5, 5000).toFixed(2)}`);
+
