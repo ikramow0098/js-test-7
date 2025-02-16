@@ -55,4 +55,24 @@ const calculateLoyaltyDiscount = (amount, years) => {
 calculateLoyaltyDiscount(100, 6); // Expected Output: "Discounted Price: $85.00"
 calculateLoyaltyDiscount(200, 2); // Expected Output: "Discounted Price: $190.00"
 
+//Task 4: Parameters and Arguments - Product Shipping Cost Calculation
+
+/*
+We calculate shipping costs based on:
+
+The weight of the product.
+The destination (USA or Canada).
+Whether the shipping is expedited
+*/
+
+function calculateShippingCost(weight, location, expedited = false) {
+  let baseCost = location === "USA" ? 5 + (0.5 * weight) : 10 + (0.7 * weight);
+  if (expedited) baseCost += 10;
+  console.log(`Shipping Cost: $${baseCost.toFixed(2)}`);
+}
+
+// Test Cases
+calculateShippingCost(10, "USA", true); // Expected Output: "Shipping Cost: $20.00"
+calculateShippingCost(5, "Canada", false); // Expected Output: "Shipping Cost: $13.50"
+
 
